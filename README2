@@ -1,0 +1,162 @@
+bus folder, class Movie
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Project_Part1_Andrea_Pinilla.logic
+{
+    [Serializable]
+    class Duration
+    {
+        private int hours;
+        private int minutes;
+
+        public int Hours { get => hours; set => hours = value; }
+        public int Minutes { get => minutes; set => minutes = value; }
+
+        public Duration()
+        {
+            //this.Hours = 00;
+            //this.Minutes = 000;
+        }
+        public Duration(int tmpHours, int tmpMinutes)
+        {
+            this.Hours = tmpHours;
+            this.Minutes = tmpMinutes;
+        }
+        override
+        public String ToString()
+        {
+
+            return this.Hours + " : " + this.Minutes;
+
+        }
+
+
+    }
+    enum EnumActor
+    {
+        Unknown, Robert_De_Niro, Meryl_Streep, Jack_Nicholson, Susan_Sarandon, Tom_Hanks, Tilda_Swinton,
+        Marlon_Brando, Cate_Blanchett, Leonardo_DiCaprio, Diane_Keaton, Johnny_Depp, Jodie_Foster,
+        Al_Pacino, Michelle_Pfeiffer, Denzel_Washington, Sigourney_Weaver, Brad_Pitt, Angelina_Jolie,
+        Daniel_DayLewis, Helena_Bonham_Carter
+    }
+    enum EnumDirector
+    {
+        Unknown, Martin_Scorsese, Alfred_Hitchcock, Steven_Spielberg, Roman_Polanski,
+        Ridley_Scott, Tony_Scott, James_Cameron, Quentin_Tarantino, Sofia_Coppola, Clint_Eastwood,
+        Ethan_Coen, Stanley_Kubrick, George_Lucas, Oliver_Stone, Woody_Allen, Tim_Burton,
+        Mel_Gibson, Ben_Affleck, Guy_Ritchie, Peter_Jackson, Charles_Chaplin 
+    }
+    enum EnumGenre
+    {
+        Unknown, Action, Adventure, Animation, Comedy, Crime, Drama,
+        Family, Fantasy, Fiction, Horror, Mystery, Romance, Thriller
+    }
+
+    enum EnumLenguage
+    {
+        Unknown, English, French, Spanish, Italian, German, Portuguese, Arabic, Mandarin
+    }
+    enum EnumCCOnOff
+    {
+        None, Enable, Disable
+    }
+    enum EnumCCLenguage
+    {
+        None, English, French, Spanish, Italian, German, Portuguese, Arabic, Mandarin
+    }
+    enum EnumAwards
+    {
+        Unknown, None, Academy_Awards, Golden_Globe_Award, NewYork_Film_Critics, MTV_MovieAndTV_Award,
+        National_Film_Award, Peoples_Choice_Award
+    }
+    [Serializable]
+    class Movies
+    {
+
+        private int movieNumber;
+        private String movieTitle;
+        private Duration duration;
+        private EnumGenre genre;
+        private String country;
+        private int year;
+        private EnumDirector director;
+        //private String director;
+        private EnumActor actor;
+        //private String actor;
+        private EnumLenguage lenguage;
+        private EnumCCOnOff closeCaption;
+        private EnumCCLenguage ccLenguage;
+        private EnumAwards award;
+
+        public string MovieTitle { get => movieTitle; set => movieTitle = value; }
+        public string Country { get => country; set => country = value; }
+        public int Year { get => year; set => year = value; }
+        //public string Director { get => director; set => director = value; }
+        //public string Actor { get => actor; set => actor = value; }
+        public Duration Duration { get => duration; set => duration = value; }
+        public EnumGenre Genre { get => genre; set => genre = value; }
+        public EnumLenguage Lenguage { get => lenguage; set => lenguage = value; }
+        public EnumCCOnOff CloseCaption { get => closeCaption; set => closeCaption = value; }
+        public EnumCCLenguage CcLenguage { get => ccLenguage; set => ccLenguage = value; }
+        public EnumAwards Award { get => award; set => award = value; }
+        public int MovieNumber { get => movieNumber; set => movieNumber = value; }
+        public EnumDirector Director { get => director; set => director = value; }
+        public EnumActor Actor { get => actor; set => actor = value; }
+
+        public Movies()
+        {
+            //this.MovieNumber = 0000;
+            //this.MovieTitle = "Unknown";
+            ////this.Duration.Hours = 000;
+            ////this.Duration.Minutes = 000;
+            //this.Genre = EnumGenre.Unknown;
+            //this.Country = "Unknown";
+            //this.Year = 0000;
+            //this.Director = "Unknown";
+            //this.Actor = "Unknown";
+            //this.Lenguage = EnumLenguage.Unknown;
+            //this.CloseCaption = EnumCCOnOff.None;
+            //this.CcLenguage = EnumCCLenguage.None;
+            //this.Award = EnumAwards.Unknown;
+
+        }
+        public Movies(int tmpMovieNum, String tmpMovieTitle, Duration tmpDuration, EnumGenre tmpGenre, String tmpCountry,
+                        int tmpYear, EnumDirector tmpDirector, EnumActor tmpActor, EnumLenguage tmpLenguage,
+                        EnumCCOnOff tmpCC, EnumCCLenguage tmpCCLen, EnumAwards tmpAward)
+        {
+            this.MovieNumber = tmpMovieNum;
+            this.MovieTitle = tmpMovieTitle;
+            this.Duration = tmpDuration;
+            this.Genre = tmpGenre;
+            this.Country = tmpCountry;
+            this.Year = tmpYear;
+            this.Director = tmpDirector;
+            this.Actor = tmpActor;
+            this.Lenguage = tmpLenguage;
+            this.CloseCaption = tmpCC;
+            this.CcLenguage = tmpCCLen;
+            this.Award = tmpAward;
+        }
+        override
+        public String ToString()
+        {
+
+            return  this.MovieNumber + "\t" +
+                    this.MovieTitle + "\t" +
+                    this.Duration + "\t" +
+                    this.Genre + "\t" +
+                    this.Country + "\t" +
+                    this.Year + "\t" +
+                    this.Director + "\t" +
+                    this.Actor + "\t" +
+                    this.Lenguage + "\t" +
+                    this.CloseCaption + "\t" +
+                    this.CcLenguage + "\t" +
+                    this.Award;
+
+        }
+    }
+}
